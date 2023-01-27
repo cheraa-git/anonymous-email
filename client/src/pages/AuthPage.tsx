@@ -36,7 +36,7 @@ export const AuthPage: FC = () => {
         />
       </form>
       <div className="text-end mr-3">
-        {loading ? <Loader/> : <Button onClick={() => singInHandler()}>Sing in</Button>}
+        {loading ? <Loader/> : <Button onClick={() => singInHandler()}>Sign in</Button>}
 
       </div>
     </div>
