@@ -3,7 +3,7 @@ import { addMessage, logout, setConnection, setError, setLoading, setMessages, s
 import { IMessage, SocketDataClient } from "../../../types"
 
 export const connect = (name: string) => (dispatch: AppDispatch) => {
-  const connection = new WebSocket('ws://localhost:8080/')
+  const connection = new WebSocket(process.env.REACT_APP_SERVER_URL + '')
   connection.onopen = () => {
     dispatch(setConnection(connection))
     connection.send(JSON.stringify({ type: 'login', name }))
