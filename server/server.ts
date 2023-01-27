@@ -29,7 +29,7 @@ wss.on('connection', (ws) => {
           if (newUser.error) errors.push(newUser.error)
           if (newUser.user) {
             users.users.push(newUser.user)
-            wss.clients.forEach(client => client.send(JSON.stringify({ type: 'add_user', users })))
+            wss.clients.forEach(client => client.send(JSON.stringify({ type: 'add_user', users: users.users })))
           }
         }
         ws.send(JSON.stringify({
